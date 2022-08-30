@@ -9,7 +9,7 @@ const Header = () => {
           <span className='ml-2 text-3xl font-semibold title-font'>SHIELD</span>
         </div>
 
-        <div className="flex items-center cursor-pointer">
+        <div className="flex items-center cursor-pointer hover:opacity-80 transition-all duration-300">
           <span className='text-xl font-bold mr-9 primary-font hidden sm:block'>Get in Touch</span>
           <img src="assets/images/icons/arrow_right.png" alt="arrow_right" height='20px' />
         </div>
