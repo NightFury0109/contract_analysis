@@ -1,0 +1,23 @@
+.search-form {
+  border: 1px solid #FFFFFF;
+  border-radius: 0.3rem;
+  padding: 20px;
+  background-color: transparent;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.search-btn {
+  background: #2187C3;
+  border: 1px solid #2187C3;
+  border-radius: 9px;
+  height: 70px;
+  width: 70px;
+
+  &:hover {
+    background: #51ace1;
+    border-color: #51ace1;
+  }
+}
