@@ -16,14 +16,4 @@ const contract = createSlice({
 
 export const { setVerifyStatus } = contract.actions;
 
-export const setContractStatus = (status) => {
-  return async dispatch => {
-    try {
-      dispatch(setVerifyStatus(status));
-    } catch (error) {
-      console.log(error);
-    }
-  }
-}
-
 export default contract.reducer;

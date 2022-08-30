@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
 
-import { setContractStatus } from '../../apis/contract';
+import { setContractStatus, setVerifyStatus } from '../../apis/contract';
 
 import './style.scss';
 
@@ -41,7 +41,7 @@ const Landing = () => {
     //   return
     // }
 
-    dispatch(setContractStatus(false));
+    dispatch(setVerifyStatus(true));
 
     navigate(`/analysis/${address}`);
   }
