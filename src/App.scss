@@ -1,3 +1,24 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5845d3;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7d6edd;
+}
+
 .App {
   background: linear-gradient(122.61deg, #342498 9.17%, #16132B 76.1%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
