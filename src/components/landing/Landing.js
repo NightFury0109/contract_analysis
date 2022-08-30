@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
 
-import { setContractStatus, setVerifyStatus } from '../../apis/contract';
+import { setVerifyStatus } from '../../apis/contract';
 
 import './style.scss';
 
