@@ -1,4 +1,5 @@
 import React from 'react';
+import Web3 from 'web3';
 
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
@@ -6,13 +7,36 @@ import BgTextCard from './BgTextCard';
 import './style.scss';
 
 const Landing = () => {
+  const web3 = new Web3("https://mainnet.infura.io/v3/8d8c24c43df74caeab400362f82b4805");
+
+  const searchContract = async (address) => {
+    console.log(address);
+
+    // let flag = false;
+    // web3.eth.getBalance(address, function (error, balance) {
+    //   if (error) {
+    //     console.log(error);
+    //     flag = True;
+    //   } else {
+    //     balance = web3.utils.fromWei(balance, "ether");
+    //     console.log(balance);
+    //     setContractBalance(balance + " eth");
+    //   }
+    // }).then(
+    //   balance => console.log("106")
+    // );
+    // if (flag) {
+    //   return
+    // }
+  }
+
   return (
     <>
       <p className='text-6xl font-bold text-center mt-32 title-font'>Crypto Scam Detector</p>
       <p className='text-center text-2xl font-medium leading-9 mt-10'>Scan smart contracts and wallet addresses for malicious activity</p>
 
       <div className="mt-24">
-        <SearchForm />
+        <SearchForm searchContract={searchContract} />
       </div>
 
       <div className="mt-28 flex flex-col items-center cursor-pointer">
