@@ -6,6 +6,9 @@ import Contract from './Contract';
 import TrustPercentage from './TrustPercentage';
 import Balance from './Balance';
 import FirstTransaction from './FirstTransaction';
+import LastTransaction from './LastTransaction';
+import TransactionInitiated from './TransactionInitiated';
+import TotalValue from './TotalValue';
 
 const Analysis = () => {
   return (
@@ -16,10 +19,13 @@ const Analysis = () => {
       <div className="mt-5 flex flex-col items-center">
         <Contract />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-12">
           <TrustPercentage />
           <Balance />
           <FirstTransaction />
+          <LastTransaction />
+          <TransactionInitiated />
+          <TotalValue />
         </div>
       </div>
     </>
