@@ -10,7 +10,7 @@ const SearchForm = () => {
         <div className="flex items-center w-full sm:w-2/3">
           <input type="text" placeholder='Enter a contract or wallet address' className='w-full search-form' />
 
-          <button className='search-btn ml-6 flex items-center justify-center'>
+          <button className='search-btn transition-all duration-300 ml-6 flex items-center justify-center'>
             <ImSearch className=' text-4xl' />
           </button>
         </div>

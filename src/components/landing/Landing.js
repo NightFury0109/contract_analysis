@@ -31,7 +31,7 @@ const Landing = () => {
       </div>
 
       <div className="flex justify-center mt-32">
-        <button className='border-2 rounded px-20 py-7 font-bold'>GET IN TOUCH</button>
+        <button className='border-2 rounded px-20 py-7 font-bold transition-all duration-300 hover:bg-white hover:text-primary-500'>GET IN TOUCH</button>
       </div>
     </>
   )
