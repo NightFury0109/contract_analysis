@@ -1,33 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
 
+import { setContractStatus } from '../../apis/contract';
+
 import './style.scss';
 
 const Landing = () => {
+  const [contractAddr, setContractAddr] = useState();
+  const [balance, setBalance] = useState();
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const web3 = new Web3("https://mainnet.infura.io/v3/8d8c24c43df74caeab400362f82b4805");
 
   const searchContract = async (address) => {
     console.log(address);
+    setContractAddr(address);
 
     // let flag = false;
-    // web3.eth.getBalance(address, function (error, balance) {
+    // console.log(web3)
+    // web3.eth.getBalance(address, (error, bal) => {
     //   if (error) {
     //     console.log(error);
-    //     flag = True;
+    //     flag = true;
     //   } else {
-    //     balance = web3.utils.fromWei(balance, "ether");
-    //     console.log(balance);
-    //     setContractBalance(balance + " eth");
+    //     bal = web3.utils.fromWei(bal, "ether");
+    //     console.log(bal);
+    //     setBalance(bal + " eth");
     //   }
     // }).then(
-    //   balance => console.log("106")
+    //   bal => console.log("106")
     // );
     // if (flag) {
     //   return
     // }
+
+    dispatch(setContractStatus(false));
+
+    navigate(`/analysis/${address}`);
   }
 
   return (

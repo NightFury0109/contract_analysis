@@ -5,14 +5,28 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import './style.scss';
 
-const Contract = () => {
+const Contract = ({ verified }) => {
   let params = useParams();
+
+  let checkImg;
+  let text;
+  let textColor;
+
+  if (verified) {
+    checkImg = "../../assets/images/icons/check.png";
+    text = "Verified NFT Contract";
+    textColor = "success-cl";
+  } else {
+    checkImg = "../../assets/images/icons/uncheck.png";
+    text = "Malicious Contract Detected";
+    textColor = "error-cl";
+  }
 
   return (
     <>
       <div className="contract-card grid grid-cols-6 gap-3 shadow-xl">
         <div className="col-span-1 flex justify-center items-center">
-          <img src="../../assets/images/icons/check.png" alt="check" className='w-12 h-12' />
+          <img src={checkImg} alt="check" className='w-12 h-12' />
         </div>
 
 
@@ -23,11 +37,11 @@ const Contract = () => {
 
           <img src="../../assets/images/white_line.png" alt="white_line" width="100%" />
 
-          <p className='success-cl text-center text-2xl font-semibold leading-7 mt-5'>Verified NFT Contract</p>
+          <p className={`${textColor} text-center text-2xl font-semibold leading-7 mt-5`}>{text}</p>
         </div>
 
         <div className="col-span-1 flex justify-center items-center">
-          <img src="../../assets/images/icons/check.png" alt="check" className='w-12 h-12' />
+          <img src={checkImg} alt="check" className='w-12 h-12' />
         </div>
       </div>
     </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import './style.scss';
 
@@ -11,13 +12,15 @@ import TransactionInitiated from './TransactionInitiated';
 import TotalValue from './TotalValue';
 
 const Analysis = () => {
+  const { verified } = useSelector(state => state.contract);
+
   return (
     <>
       <p className='text-6xl font-bold text-center leading-96 mt-6'>Analysis Results</p>
       <p className='text-2xl font-medium leading-9 text-center mt-4'>You've scanned your first smart contract!</p>
 
       <div className="mt-5 flex flex-col items-center">
-        <Contract />
+        <Contract verified={verified} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-12">
           <TrustPercentage />
