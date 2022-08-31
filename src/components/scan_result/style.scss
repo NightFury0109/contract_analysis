@@ -1,0 +1,19 @@
+.contract-status,
+.trust-score-card,
+.contract-balance-card {
+  background: rgba(112, 125, 238, 0.2);
+  border-radius: 16px;
+}
+
+.light-bg {
+  background: rgba(112, 125, 238, 0.55);
+  border-radius: 16px 16px 0px 0px;
+}
+
+.trust-score-card,
+.contract-balance-card {
+  padding: 1.5rem 1rem;
+  // width: 30vw;
+  // max-width: 400px;
+  // min-width: 300px;
+}

@@ -25,7 +25,7 @@ const Landing = () => {
 
     dispatch(setVerifyStatus(true));
 
-    navigate(`/analysis/${address}`);
+    navigate(`/scan-result/${address}`);
 
     let reqData = { "address": [address] };
 

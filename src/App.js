@@ -9,6 +9,7 @@ import Header from './components/header/Header';
 import Landing from './components/landing/Landing';
 import Footer from './components/footer/Footer';
 import Analysis from './components/analysis/Analysis';
+import ScanResult from './components/scan_result/ScanResult';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Landing />} />
               <Route path='/analysis/:address' element={<Analysis />} />
+              <Route path='/scan-result/:address' element={<ScanResult />} />
             </Routes>
           </div>
 
