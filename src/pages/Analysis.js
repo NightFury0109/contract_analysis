@@ -2,17 +2,17 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import './style.scss';
+// import './style.scss';
 
-import Contract from './Contract';
-import TrustPercentage from './TrustPercentage';
-import Balance from './Balance';
-import FirstTransaction from './FirstTransaction';
-import LastTransaction from './LastTransaction';
-import TransactionInitiated from './TransactionInitiated';
-import TotalValue from './TotalValue';
+import Contract from '../components/analysis/Contract';
+import TrustPercentage from '../components/analysis/TrustPercentage';
+import Balance from '../components/analysis/Balance';
+import FirstTransaction from '../components/analysis/FirstTransaction';
+import LastTransaction from '../components/analysis/LastTransaction';
+import TransactionInitiated from '../components/analysis/TransactionInitiated';
+import TotalValue from '../components/analysis/TotalValue';
 
-import { getContractDate, getContractBal } from '../../action/contract';
+import { getContractDate, getContractBal } from '../action/contract';
 
 const Analysis = () => {
   const { verified } = useSelector(state => state.contract);

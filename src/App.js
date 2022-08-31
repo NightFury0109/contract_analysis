@@ -6,10 +6,10 @@ import './App.scss';
 import store from './store';
 
 import Header from './components/header/Header';
-import Landing from './components/landing/Landing';
+import Landing from './pages/Landing';
 import Footer from './components/footer/Footer';
-import Analysis from './components/analysis/Analysis';
-import ScanResult from './components/scan_result/ScanResult';
+import Analysis from './pages/Analysis';
+import ScanResult from './pages/ScanResult';
 
 function App() {
   return (

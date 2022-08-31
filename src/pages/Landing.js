@@ -4,12 +4,12 @@ import Web3 from 'web3';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import SearchForm from './SearchForm';
-import BgTextCard from './BgTextCard';
+import SearchForm from '../components/landing/SearchForm';
+import BgTextCard from '../components/landing/BgTextCard';
 
-import { setVerifyStatus, getContractDate, getContractBal } from '../../action/contract';
+import { setVerifyStatus, getContractDate, getContractBal } from '../action/contract';
 
-import './style.scss';
+// import './style.scss';
 
 const Landing = () => {
   const [contractAddr, setContractAddr] = useState();

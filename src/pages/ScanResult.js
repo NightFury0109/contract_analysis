@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import './style.scss';
+// import './style.scss';
 
-import ContractStatus from './ContractStatus';
-import TrustScore from './TrustScore';
-import ContractBalance from './ContractBalance';
-import Transactions from './Transactions';
-import Vulnerabilities from './Vulnerabilities';
+import ContractStatus from '../components/scan_result/ContractStatus';
+import TrustScore from '../components/scan_result/TrustScore';
+import ContractBalance from '../components/scan_result/ContractBalance';
+import Transactions from '../components/scan_result/Transactions';
+import Vulnerabilities from '../components/scan_result/Vulnerabilities';
+import CallFuncs from '../components/scan_result/CallFuncs';
 
-import { } from '../../action/contract';
+import { } from '../action/contract';
 
 const Analysis = () => {
   const { verified } = useSelector(state => state.contract);
@@ -45,6 +46,9 @@ const Analysis = () => {
 
           <div className="col-span-6 lg:col-span-3">
             <Vulnerabilities />
+          </div>
+          <div className="col-span-6 lg:col-span-3">
+            <CallFuncs />
           </div>
         </div>
       </div>
