@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import https from 'https';
 import Web3 from 'web3';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -6,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
 
-import { setVerifyStatus, getContractData } from '../../action/contract';
+import { setVerifyStatus, getContractDate, getContractBal } from '../../action/contract';
 
 import './style.scss';
 
@@ -22,32 +23,14 @@ const Landing = () => {
   const searchContract = async (address) => {
     setContractAddr(address);
 
-    // let flag = false;
-    // console.log(web3)
-    // web3.eth.getBalance(address, (error, bal) => {
-    //   if (error) {
-    //     console.log(error);
-    //     flag = true;
-    //   } else {
-    //     bal = web3.utils.fromWei(bal, "ether");
-    //     console.log(bal);
-    //     setBalance(bal + " eth");
-    //   }
-    // }).then(
-    //   bal => console.log("106")
-    // );
-    // if (flag) {
-    //   return
-    // }
-
     dispatch(setVerifyStatus(true));
 
     navigate(`/analysis/${address}`);
 
     let reqData = { "address": [address] };
 
-    await dispatch(getContractData(reqData));
-
+    await dispatch(getContractDate(reqData));
+    await dispatch(getContractBal(reqData));
   }
 
   return (

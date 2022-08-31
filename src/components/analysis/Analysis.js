@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import './style.scss';
@@ -12,18 +12,20 @@ import LastTransaction from './LastTransaction';
 import TransactionInitiated from './TransactionInitiated';
 import TotalValue from './TotalValue';
 
-import { getContractData } from '../../action/contract';
+import { getContractDate, getContractBal } from '../../action/contract';
 
 const Analysis = () => {
   const { verified } = useSelector(state => state.contract);
+  const dispatch = useDispatch();
 
-  // const param = useParams();
+  const param = useParams();
 
-  // useEffect(() => {
-  //   let reqData = { address: param.address };
+  useEffect(() => {
+    let reqData = { "address": [param.address] };
 
-  //   getContractData(reqData);
-  // }, []);
+    dispatch(getContractDate(reqData));
+    dispatch(getContractBal(reqData));
+  }, []);
 
   return (
     <>

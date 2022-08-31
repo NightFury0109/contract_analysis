@@ -4,7 +4,8 @@ import api from '../utils/api';
 
 const initialState = {
   verified: false,
-  data: null
+  date: null,
+  countData: null
 }
 
 const contract = createSlice({
@@ -14,20 +15,37 @@ const contract = createSlice({
     setVerifyStatus(state, action) {
       state.verified = action.payload;
     },
-    setContractData(state, action) {
-      state.data = action.payload;
-    }
+    setContractDate(state, action) {
+      state.date = action.payload;
+    },
+    setCountData(state, action) {
+      state.countData = action.payload;
+    },
   }
 });
 
-export const { setVerifyStatus, setContractData } = contract.actions;
+export const { setVerifyStatus, setContractDate, setCountData } = contract.actions;
 
-export const getContractData = (reqData) => {
+export const getContractDate = (reqData) => {
   return async dispatch => {
     try {
       const res = await api.post('/v1/analysis', JSON.stringify(reqData));
 
       console.log(res.data);
+      dispatch(setContractDate(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+export const getContractBal = (reqData) => {
+  return async dispatch => {
+    try {
+      const res = await api.post('/v2/analysis/count', JSON.stringify(reqData));
+
+      console.log(res.data);
+      dispatch(setCountData(res.data));
     } catch (error) {
       console.log(error);
     }
