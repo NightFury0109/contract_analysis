@@ -2,14 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 // import logger from "redux-logger";
 
-import api from "./apis/api";
-import contract from './apis/contract';
+import contract from './action/contract';
 
 let middleware = getDefaultMiddleware => getDefaultMiddleware();
 // let middleware = getDefaultMiddleware => getDefaultMiddleware().concat(logger);
 
 const rootReducer = combineReducers({
-  api: api,
   contract: contract
 });
 

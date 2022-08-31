@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import SearchForm from './SearchForm';
 import BgTextCard from './BgTextCard';
 
-import { setVerifyStatus } from '../../apis/contract';
+import { setVerifyStatus, getContractData } from '../../action/contract';
 
 import './style.scss';
 
@@ -20,7 +20,6 @@ const Landing = () => {
   const web3 = new Web3("https://mainnet.infura.io/v3/8d8c24c43df74caeab400362f82b4805");
 
   const searchContract = async (address) => {
-    console.log(address);
     setContractAddr(address);
 
     // let flag = false;
@@ -44,6 +43,11 @@ const Landing = () => {
     dispatch(setVerifyStatus(true));
 
     navigate(`/analysis/${address}`);
+
+    let reqData = { "address": [address] };
+
+    await dispatch(getContractData(reqData));
+
   }
 
   return (
